@@ -5,7 +5,9 @@
  */
 package mz.co.explicador.correcoes;
 
+import java.util.Arrays;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,33 +19,30 @@ public class Exercicio10 {
       escreva a média aritmética simples dos elementos ímpares armazenados neste array
     */
     
-     public static void main(String[] args) {
-        Scanner r = new Scanner(System.in);
-       
-        int[] vetorA = new int[10];
+    public static void main(String[] args) {
+      
+        int[] vetorA = new int[5];
     
-           for (int i = 0; i < vetorA.length; i++) {
-              System.out.println("Insira o " +(i+1)+"o valor");
-              vetorA[i]=r.nextInt();
-           }
-              int soma = 0;
-              int impar=0;
-           for (int i = 0; i < vetorA.length; i++) {
-             if (vetorA[i] % 2 != 0){
-                  soma+=vetorA[i];
-                  impar++;
-               }
-           }
-          System.out.print("Valores do array A = ");    
-    for (int i = 0; i < vetorA.length; i++) {
-          System.out.print(vetorA[i] + " ");
-    }
-        System.out.println();
-        
-          System.out.println("A soma de todos os numeros impares: " + soma);
-          System.out.println("A media dos numeros impares: " + (soma/impar));
+        for (int i = 0; i < vetorA.length; i++) {
+            String nstgp = JOptionPane.showInputDialog("Insira o " +(i+1)+"o valor");
           
-     }
-     }
-
-
+            vetorA[i] = Integer.parseInt(nstgp);
+        }
+        
+        int soma = 0;
+        int impar=0;
+        
+        for (int i = 0; i < vetorA.length; i++) {
+            if (vetorA[i] % 2 != 0){
+                soma+=vetorA[i];
+                impar++;
+            }
+        }
+           
+        JOptionPane.showMessageDialog(null ,"Numeros digitados " + Arrays.toString(vetorA));  
+        JOptionPane.showMessageDialog(null , "\n A soma de todos os numeros impares: " + soma + 
+                                       "\n A media dos numeros impares: " + (soma/impar));
+   
+     }     
+    }
+ 

@@ -5,7 +5,9 @@
  */
 package mz.co.explicador.correcoes;
 
+import java.util.Arrays;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,42 +22,30 @@ public class Exercicio07 {
       
  public static void main(String[] args) {
         
-   Scanner r = new Scanner(System.in);
-    int numeros= 5;
-   int[] array1= new int [numeros];
-    int[] array2= new int [numeros];
-    double [] array3= new double [numeros];
-       
- for (int i = 0; i < array1.length; i++) {
-          System.out.println("Insira os valores do arrayA na posicao " + i);
-        array1[i]=r.nextInt();
 
-    }
-     for (int i = 0; i < array2.length; i++) {
-          System.out.println("Insira os valores do arrayB na posicao " + i);
-        array2[i]=r.nextInt();
-     }
-     for (int i = 0; i < array3.length; i++) {
-          array3[i] = array1[i] + array2[i]; 
-    }
-     
-        System.out.print("Array A = ");    
-    for (int i = 0; i < array1.length; i++) {
-          System.out.print(array1[i] + " ");
-    }
-        System.out.println();
+        int numeros= 5;
+        int[] arrayA= new int [numeros];
+        int[] arrayB= new int [numeros];
+        double [] arrayC= new double [numeros];
        
-     System.out.print("Array B = ");    
-    for (int i = 0; i < array2.length; i++) {
-          System.out.print(array2[i] + " ");
-    }
-        System.out.println();
+        for (int i = 0; i < numeros; i++) {
+            
+            String nstg = JOptionPane.showInputDialog("Insira os valores do arrayA na posicao " + i);
         
-         System.out.print("Array c = ");    
-    for (int i = 0; i < array3.length; i++) {
-          System.out.print(array3[i] + " ; ");
-    }
-        System.out.println();
+            arrayA[i] = Integer.parseInt(nstg);
+        }
+ 
+        for (int i = 0; i < numeros; i++) {
+            String nstgp = JOptionPane.showInputDialog("Insira os valores do arrayB na posicao " + i);
+         
+            arrayB[i] = Integer.parseInt(nstgp);
+         
+            arrayC[i] = arrayA[i] + arrayB[i];
+        }
+   
+        JOptionPane.showMessageDialog(null ,"Array A: " + Arrays.toString(arrayA) );
+        JOptionPane.showMessageDialog(null ,"Array B: " + Arrays.toString(arrayB) );
+        JOptionPane.showMessageDialog(null, " A soma " + Arrays.toString(arrayC));
     
      
     }

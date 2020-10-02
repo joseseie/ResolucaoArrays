@@ -5,7 +5,8 @@
  */
 package mz.co.explicador.correcoes;
 
-import java.util.Scanner;
+import java.util.Arrays;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,29 +19,27 @@ public class Exercicio15 {
     */
     
     public static void main(String[] args) {
-        Scanner r = new Scanner(System.in);
-       
+        
         int[] vetorA = new int[10];
         
-          for (int i = 0; i < vetorA.length; i++) {
-              System.out.println("Digite o " + (i+1) + "o numero");
-              vetorA[i]=r.nextInt();
+        for (int i = 0; i < vetorA.length; i++) {
+             String idade = JOptionPane.showInputDialog("Digite o " + (i+1) + "o numero");
+             
+             vetorA[i] = Integer.parseInt(idade);
               
-          }
-         int numPares=0;
-          for (int i = 0; i < vetorA.length; i++) {
-              if (vetorA[i] % 2 ==0 ){
-                  numPares++;
-              }
-              
-          }
-             System.out.print("Total de numeros inseridos : ");    
-    for (int i = 0; i < vetorA.length; i++) {
-          System.out.print(vetorA[i] + " ");
-    }
-        System.out.println();
+        }
         
-          System.out.println("Quatidade de numeros pares: " + numPares);
+        int numPares=0;
+        
+        for (int i = 0; i < vetorA.length; i++) {
+            if (vetorA[i] % 2 ==0 ){
+                numPares++;
+            }
+              
+        }
+      
+        JOptionPane.showMessageDialog(null ,"Idades digitadas:" + Arrays.toString(vetorA));           
+        JOptionPane.showMessageDialog(null ,"Quatidade de numeros pares: " + numPares);
        
       }
 }

@@ -5,7 +5,9 @@
  */
 package mz.co.explicador.correcoes;
 
+import java.util.Arrays;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,30 +20,24 @@ public class Exercicio16 {
     */
     
     public static void main(String[] args) {
-        Scanner r = new Scanner(System.in);
-        
-      int valor= 5;   
-      int[] arrayA = new int[valor];
-      int[] arrayB = new int[valor];
+    
+        int valor= 5;   
+        int[] arrayA = new int[valor];
+        int[] arrayB = new int[valor];
       
         for (int i = 0; i < arrayA.length; i++) {
-          System.out.println("insira o " +(i +1)+ "o numero");
-          arrayA[i]= r.nextInt();
+            String str = JOptionPane.showInputDialog("insira o " +(i +1)+ "o numero");
+         
+            arrayA[i] = Integer.parseInt(str);
         }
-         for (int i = 0; i < arrayB.length; i++) {
-          arrayB[i]= arrayA[i];
+        
+        for (int i = 0; i < arrayB.length; i++) {
+            arrayB[i]= arrayA[i];
         }
-              System.out.print("Array A = ");    
-    for (int i = 0; i < arrayA.length; i++) {
-          System.out.print(arrayA[i] + " ");
-    }
-        System.out.println();
-              
-     System.out.print("Array B = ");    
-    for (int i = 0; i < arrayB.length; i++) {
-          System.out.print(arrayB[i] + " ");
-    }
-        System.out.println();
+            
+        JOptionPane.showMessageDialog(null ,"Array A: " + Arrays.toString(arrayA)+ 
+                  " \n Array B: " + Arrays.toString(arrayB) );
+      
       
     }
     

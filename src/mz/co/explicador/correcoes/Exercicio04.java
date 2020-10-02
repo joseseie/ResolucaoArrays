@@ -6,7 +6,6 @@
 package mz.co.explicador.correcoes;
 
 import java.util.Arrays;
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,27 +19,20 @@ public class Exercicio04 {
     
      
     public static void main(String[] args) {
-   
-   
+  
+        int numeros =5;
+        int arrayA[]=  new int [numeros];
+        int arrayB[]= new  int [numeros];
+        int var=0;
         
-     int numeros =5;
-    int arrayA[]=  new int [numeros];
-     int arrayB[]= new  int [numeros];
-       
-    for (int i = 0; i < numeros; i++) {
-         JOptionPane.showInputDialog("Insira o " + (i+1) +"o numero");
-    }
-      for (int i = 0; i < numeros; i++) {
-         
-       arrayB[i]=arrayA[i];
-      }
-   String strMedias = Arrays.toString(arrayB);
+        for (int i = 0; i < numeros; i++) {
+            String nstr = JOptionPane.showInputDialog("Insira o " + (i+1) +"o numero");
    
-   //ra JOptionPane.showMessageDialog(null, "A media dos alunos " + strMedias);
-          
+            arrayA[i] = Integer.parseInt(nstr);   
+   }
     
-        System.out.println(arrayA);
-   
+        arrayB = arrayA;
+        JOptionPane.showMessageDialog(null , Arrays.toString(arrayB));
         
            
      

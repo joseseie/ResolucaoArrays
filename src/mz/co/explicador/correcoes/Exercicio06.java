@@ -3,6 +3,7 @@ package mz.co.explicador.correcoes;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,11 +24,14 @@ public class Exercicio06 {
         Scanner s = new Scanner(System.in);
         
         for (int i = 0; i < tamanho; i++) {
-            System.out.println("Insira o valor no arrayA[" + i + "]");
-            arrayA[i] = s.nextInt();
             
-            System.out.println("Insira o valor no arrayB[" + i + "]");
-            arrayB[i] = s.nextInt();
+            String valoresA = JOptionPane.showInputDialog("Insira o valor no arrayA[" + i + "]");
+            
+            arrayA[i] = Integer.parseInt(valoresA);
+            
+            String valoresB = JOptionPane.showInputDialog("Insira o valor no arrayB[" + i + "]");
+            
+            arrayB[i] = Integer.parseInt(valoresB);
         }
         
         for (int i = 0; i < arrayA.length; i++) {
@@ -37,9 +41,9 @@ public class Exercicio06 {
             arraysCopiados[arrayA.length + i] = arrayB[i];
         }
         
-        System.out.println("Array A: " + Arrays.toString(arrayA) );
-        System.out.println("Array B: " + Arrays.toString(arrayB) );
-        System.out.println("Copiados: " + Arrays.toString(arraysCopiados) );
+        JOptionPane.showMessageDialog(null ,"Array A: " + Arrays.toString(arrayA) );
+        JOptionPane.showMessageDialog(null ,"Array B: " + Arrays.toString(arrayB) );
+        JOptionPane.showMessageDialog(null ,"Copiados: " + Arrays.toString(arraysCopiados) );
         
     }
     

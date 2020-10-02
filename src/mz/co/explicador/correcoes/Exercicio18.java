@@ -5,7 +5,8 @@
  */
 package mz.co.explicador.correcoes;
 
-import java.util.Scanner;
+import java.util.Arrays;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,33 +20,20 @@ public class Exercicio18 {
   */
      
     public static void main(String[] args) {
-        
-   Scanner r = new Scanner(System.in);  
-   
-   int numeros = 15;
-    int[] arrayA= new int [numeros];
-    int[] arrayB= new int [numeros];
-       
-    for (int i = 0; i < arrayA.length; i++) {
-          System.out.println("insira o " +(i +1)+ "o numero");
-        arrayA[i]=r.nextInt();
-
-          arrayB[i]=arrayA[i] * arrayA[i] ;
-           }
-         System.out.print("Numeros insiridos : ");    
-    for (int i = 0; i < arrayA.length; i++) {
-          System.out.print(arrayA[i] + " ");
-    }
-        System.out.println("");
       
-       System.out.println("Multiplicando os numeros insiridos pelos memos.");
-              
-     System.out.print("Resultados : ");    
-    for (int i = 0; i < arrayB.length; i++) {
-          System.out.print(arrayB[i] + " ");
-    }
-        System.out.println();
-    }
-     
-    
+        int numeros = 5;
+        int[] arrayA= new int [numeros];
+        int[] arrayB= new int [numeros];
+       
+        for (int i = 0; i < arrayA.length; i++) {
+            String str = JOptionPane.showInputDialog("insira o " +(i +1)+ "o numero");
+        
+            arrayA[i]=Integer.parseInt(str);
+
+            arrayB[i]=arrayA[i] * arrayA[i] ;
+        }
+           
+        JOptionPane.showMessageDialog(null,"Numeros insiridos :"+ Arrays.toString(arrayA)+"\n Resultados : "+ Arrays.toString(arrayB));
+      
+   }  
 }

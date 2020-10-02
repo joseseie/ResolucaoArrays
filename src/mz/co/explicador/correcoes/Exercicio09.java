@@ -5,7 +5,9 @@
  */
 package mz.co.explicador.correcoes;
 
+import java.util.Arrays;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,28 +19,29 @@ public class Exercicio09 {
   *    determine a soma dos elementos armazenados neste array que são múltiplos de 5.
   */
  
-     public static void main(String[] args) {
-        Scanner r = new Scanner(System.in);
+    public static void main(String[] args) {
+     
        
-        int[] arrayA = new int[10];
+         int[] arrayA = new int[5];
     
-           for (int i = 0; i < arrayA.length; i++) {
-              System.out.println("Insira o " + (i+1)+"o numero");
-              arrayA[i]=r.nextInt();
-           }
-      int soma = 0;
-           for (int i = 0; i < arrayA.length; i++) {
-               if (arrayA[i] % 5 == 0){
-                   soma+=arrayA[i];
-               }
-           }
-          System.out.print("Valores do array A = ");    
-    for (int i = 0; i < arrayA.length; i++) {
-          System.out.print(arrayA[i] + " ");
-    }
-        System.out.println();
-        
-          System.out.println("Valores que sao multiplos de 5: " + soma);
+         for (int i = 0; i < arrayA.length; i++) {
+             String nstgp = JOptionPane.showInputDialog("Insira o " + (i+1)+"o numero");
+           
+             arrayA[i] = Integer.parseInt(nstgp);
+              
+         }
+         
+         int soma = 0;
+         for (int i = 0; i < arrayA.length; i++) {
+             
+             if (arrayA[i] % 5 == 0){
+                 soma+=arrayA[i];
+                    
+             }
+         }  
+          
+         JOptionPane.showMessageDialog(null ,"Numeros digitados " + Arrays.toString(arrayA));  
+         JOptionPane.showMessageDialog(null ,"Soma dos valores que sao multiplos de 5: " + soma);
      }
      
 }

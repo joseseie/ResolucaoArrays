@@ -5,7 +5,9 @@
  */
 package mz.co.explicador.correcoes;
 
+import java.util.Arrays;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,27 +20,22 @@ public class Exercicio08 {
        escreva a soma de todos os elementos armazenados neste array.
   */
    public static void main(String[] args) {
-        Scanner r = new Scanner(System.in);
+      
        
-        int[] arrayA = new int[10];
-    
-          for (int i = 0; i < arrayA.length; i++) {
-            System.out.println("Insira os valores que deseja somar :");
-            arrayA[i]=r.nextInt();
-           }
-           
-        int soma = 0;
-          for (int i = 0; i < arrayA.length; i++) {
-            soma+= arrayA[i];
-           
-       }
-         System.out.print("Valores do array A = ");    
+       int[] arrayA = new int[5];
     
        for (int i = 0; i < arrayA.length; i++) {
-         System.out.print(arrayA[i] + " , ");
-    }
-         System.out.println();
-        
-         System.out.println("O somatorio de todos os numeros insiridos : " + soma);
+           String nstgp = JOptionPane.showInputDialog("Insira o " +( i + 1 )+ " valor que deseja somar :");
+            
+           arrayA[i] = Integer.parseInt(nstgp);
+       }
+           
+       int soma = 0;
+       for (int i = 0; i < arrayA.length; i++) {
+           soma+= arrayA[i];
+           
+       }
+       JOptionPane.showMessageDialog(null ,"Numeros digitados " + Arrays.toString(arrayA));
+       JOptionPane.showMessageDialog(null ,"O somatorio de todos os numeros insiridos : " + soma);
    }
 }

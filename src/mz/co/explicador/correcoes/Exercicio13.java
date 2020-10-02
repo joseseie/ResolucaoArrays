@@ -5,7 +5,9 @@
  */
 package mz.co.explicador.correcoes;
 
+import java.util.Arrays;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,28 +21,33 @@ public class Exercicio13 {
        possuem idade superior a 35 anos.
 
     */
-     public static void main(String[] args) {
-        Scanner r = new Scanner(System.in);
+    
+    public static void main(String[] args) {
        
         int[] idades = new int[10];
     
-           for (int i = 0; i < idades.length; i++) {
-              System.out.println(" Digite a idade da " + (i + 1) +"o pessoa");
-              idades[i]=r.nextInt();
-           }
-           int quatidade = 0;
-           for (int i = 0; i < idades.length; i++) {
-             if(idades[i] > 35){
-                 quatidade++;
-             }
-                    }
-                       System.out.print("Idades digitadas: = ");    
-    for (int i = 0; i < idades.length; i++) {
-          System.out.print(idades[i] + " ");
-    }
-        System.out.println();
+        for (int i = 0; i < idades.length; i++) {
+              String idade = JOptionPane.showInputDialog("Insira a "+(i+1)+ "o idade");
+            
+              idades[i] = Integer.parseInt(idade);
+        }
+         
+        int quatidade = 0;
         
-          System.out.println("Quantidade de pessoas com a idade maior que 35: " + quatidade);
+        for (int i = 0; i < idades.length; i++){
+            if(idades[i] > 35){
+                quatidade++;
+            }
+        }
+           
+        JOptionPane.showMessageDialog(null ,"Quantidade de idades digitadas: " + Arrays.toString(idades));
+        JOptionPane.showMessageDialog(null ,"Quantidade de pessoas com a idade maior que 35: " + quatidade);
+                               }
+                
+   
+      
+        
+           
      }
     
-}
+
